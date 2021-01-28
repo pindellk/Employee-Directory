@@ -18,6 +18,11 @@ function Table(props) {
         <tbody>
           <tr key={employee.cell}>
             <td>{employee.name.first}</td>
+            <td>{employee.name.last}</td>
+            <td>{employee.email}</td>
+            <td>{employee.cell}</td>
+            <td>{employee.dob.date}</td>
+            <td>{employee.gender}</td>
           </tr>
         </tbody>
       ))}
