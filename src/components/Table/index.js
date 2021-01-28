@@ -14,6 +14,13 @@ function Table(props) {
           <th scope="col">Gender</th>
         </tr>
       </thead>
+      {props.results.map((employee) => (
+        <tbody>
+          <tr key={employee.cell}>
+            <td>{employee.name.first}</td>
+          </tr>
+        </tbody>
+      ))}
     </table>
   );
 }

@@ -33,11 +33,7 @@ function Directory() {
         </Row>
         <Row>
           <Col size="md-12">
-            <Table />
-            <SearchResults
-              results={employees}
-              sortOnClick={"insert function here"}
-            />
+            <Table results={employees} sortonClick={"insert function here"} />
           </Col>
         </Row>
       </Container>
