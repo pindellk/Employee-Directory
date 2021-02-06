@@ -6,6 +6,7 @@ function Table(props) {
     <table className="table table-striped">
       <thead>
         <tr>
+          <th scope="col">Picture</th>
           <th scope="col">First Name</th>
           <th scope="col">Last Name</th>
           <th scope="col">Email</th>
@@ -17,6 +18,9 @@ function Table(props) {
       {props.results.map((employee) => (
         <tbody>
           <tr key={employee.cell}>
+            <td>
+              <img src={employee.picture.thumbnail}></img>
+            </td>
             <td>{employee.name.first}</td>
             <td>{employee.name.last}</td>
             <td>{employee.email}</td>

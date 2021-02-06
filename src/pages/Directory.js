@@ -1,7 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
@@ -17,6 +16,11 @@ function Directory() {
 
   // create sort by name function - update state,
   // sort by updating state
+  // const [search, setSearch] = useState([]);
+  // useEffect(
+
+  // )
+  
 
   return (
     <div>
