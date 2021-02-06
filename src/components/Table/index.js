@@ -25,7 +25,7 @@ function Table(props) {
             <td>{employee.name.last}</td>
             <td>{employee.email}</td>
             <td>{employee.cell}</td>
-            <td>{employee.dob.date}</td>
+            <td>{employee.dob.date.slice(0, 10)}</td>
             <td>{employee.gender}</td>
           </tr>
         </tbody>

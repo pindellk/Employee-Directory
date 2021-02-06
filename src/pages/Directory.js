@@ -14,13 +14,16 @@ function Directory() {
     []
   );
 
-  // create sort by name function - update state,
-  // sort by updating state
-  // const [search, setSearch] = useState([]);
-  // useEffect(
+  const [search, setSearch] = useState([]);
+  useEffect(() => {
+    if (!search) {
+      return;
+    }
+  }, [search]);
 
-  // )
-  
+  const handleInputChange = (event) => {
+    setSearch(event.target.value);
+  };
 
   return (
     <div>
@@ -32,12 +35,16 @@ function Directory() {
         </Row>
         <Row>
           <Col size="md-12">
-            <SearchForm />
+            <SearchForm
+              list={employees}
+              handleInputChange={handleInputChange}
+              // results={search}
+            />
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-            <Table results={employees} sortonClick={"insert function here"} />
+            <Table results={employees} />
           </Col>
         </Row>
       </Container>
