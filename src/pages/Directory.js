@@ -11,19 +11,13 @@ function Directory() {
   console.log(employees);
   useEffect(
     () => API.getEmployees().then((data) => setEmployees(data.results)),
-    []
+    [1]
   );
 
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState("");
   useEffect(() => {
-    if (!search) {
-      return;
-    }
+    // setSearch(employees.filter((employee) => employee.includes("")));
   }, [search]);
-
-  const handleInputChange = (event) => {
-    setSearch(event.target.value);
-  };
 
   return (
     <div>
@@ -35,16 +29,15 @@ function Directory() {
         </Row>
         <Row>
           <Col size="md-12">
-            <SearchForm
-              list={employees}
-              handleInputChange={handleInputChange}
-              // results={search}
-            />
+            <SearchForm list={employees} onClick={() => setSearch(search)} />
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-            <Table results={employees} />
+            <Table
+              results={employees}
+              sortOnClick={"insert sort function here"}
+            />
           </Col>
         </Row>
       </Container>
