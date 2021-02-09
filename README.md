@@ -4,7 +4,7 @@ Track employees in this React application.
 ---
 <br>
 
-[LIVE ON HEROKU](X)
+[LIVE ON HEROKU](https://mighty-anchorage-12406.herokuapp.com/)
 
 ### Table of Contents
 - [Screen Shots](#screen-shots)
@@ -19,7 +19,7 @@ Track employees in this React application.
 
 ### Screen Shots
 
-![Main](X.png)
+![Main](/public/directory.png)
 
 ### User Story
 As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
