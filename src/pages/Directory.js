@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import Container from "../components/Container";
@@ -8,16 +8,11 @@ import Table from "../components/Table";
 
 function Directory() {
   const [employees, setEmployees] = useState([]);
-  console.log(employees);
+  
   useEffect(
     () => API.getEmployees().then((data) => setEmployees(data.results)),
     [1]
   );
-
-  const [search, setSearch] = useState("");
-  useEffect(() => {
-    // setSearch(employees.filter((employee) => employee.includes("")));
-  }, [search]);
 
   return (
     <div>
@@ -29,14 +24,14 @@ function Directory() {
         </Row>
         <Row>
           <Col size="md-12">
-            <SearchForm list={employees} onClick={() => setSearch(search)} />
+            <SearchForm list={employees} />
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
             <Table
               results={employees}
-              sortOnClick={"insert sort function here"}
+              // sortOnClick={"insert sort function here"}
             />
           </Col>
         </Row>

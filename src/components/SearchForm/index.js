@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import API from "../../utils/API";
 import "./style.css";
 
 function SearchForm(props) {
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    API.searchEmployees(search);
+  }, [search]);
+
   return (
     <form className="search">
       <div className="form-group">
@@ -14,7 +21,7 @@ function SearchForm(props) {
           type="text"
           className="form-control"
           placeholder="Search for an employee"
-          id="employee"
+          id="search"
         />
         <datalist id="employees">
           {props.list.map((employee) => (
@@ -23,7 +30,7 @@ function SearchForm(props) {
         </datalist>
         <button
           type="submit"
-          onClick={props.setSearch}
+          onClick={() => setSearch(search)}
           className="btn btn-success"
         >
           Search
